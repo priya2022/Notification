@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Notification Example</title>
+</head>
+<body>
+    <h1>Desktop Notification Example</h1>
+    <p>Click the button below to trigger a notification:</p>
+    <button id="notificationButton">Show Notification</button>
+
+    <script>
+        // Check if the browser supports notifications
+        if ("Notification" in window) {
+            // Request permission to display notifications
+            Notification.requestPermission().then(function (permission) {
+                if (permission === "granted") {
+                    // Permission granted, you can now display notifications
+                    document.getElementById("notificationButton").addEventListener("click", function () {
+                        new Notification("Hello, World!", {
+                            body: "This is a desktop notification example.",
+                            // icon: "path/to/your/icon.png" // Replace with the path to your custom icon (optional)
+                        });
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

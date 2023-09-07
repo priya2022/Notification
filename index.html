@@ -11,6 +11,7 @@
     <button onclick="sendNotification()">To send Notification</button>
 
     <script>
+
       function requestPermission() {
         // Check if notifications are supported
         if (typeof Notification == "undefined") {
@@ -35,8 +36,10 @@
         });
       }
 
+      
+
       function sendNotification() {
-        console.log("function is called okay");
+       console.log("function is called okay");
         var myNotification = new Notification("This is a test notification", {
           
           body: "You have allowed notifications, this is just a test",
