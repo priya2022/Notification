@@ -37,7 +37,9 @@
 
       function sendNotification() {
         var myNotification = new Notification("This is a test notification", {
+          
           body: "You have allowed notifications, this is just a test",
+          console.log("okay")
         });
         myNotification.onclick = (e) => {
           myNotification.close();
